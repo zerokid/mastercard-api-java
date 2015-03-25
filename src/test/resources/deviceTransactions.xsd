@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+          <!-- XML Schema Generated from XML Document on Tue Oct 14 2014 11:03:06 GMT-0500 (Central Daylight Time) -->
+          <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+       <xs:element name="deviceTransaction">
+              <xs:complexType>
+                     <xs:sequence>
+                            <xs:element name="Transactions">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="Transaction" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                               <xs:sequence>
+                                                                      <xs:element name="SecureElementId" type="xs:string"></xs:element>
+                                                                      <xs:element name="panDataEncryptId" type="xs:long"></xs:element>
+                                                                      <xs:element name="TransactionTimeStamp" type="xs:dateTime"></xs:element>
+                                                                      <xs:element name="CurrencyAlphaCode" type="xs:string"></xs:element>
+                                                                      <xs:element name="TransactionAmount" type="xs:double"></xs:element>
+                                                                      <xs:element name="TransactionTypeCode" type="xs:string"></xs:element>
+                                                                      <xs:element name="TransactionTypeDescription" type="xs:string"></xs:element>
+                                                                      <xs:element name="TransactionStatusCode" type="xs:string"></xs:element>
+                                                                      <xs:element name="TransactionStatusDescription" type="xs:string"></xs:element>
+                                                                      <xs:element name="MerchantName" type="xs:string"></xs:element>
+                                                                      <xs:element name="MerchantCategoryCode" type="xs:long"></xs:element>
+                                                                      <xs:element name="MerchantCategoryDescription" type="xs:string"></xs:element>
+                                                                  </xs:sequence>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                        </xs:sequence>
+                 </xs:complexType>
+          </xs:element>
+   </xs:schema>

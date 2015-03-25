@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+          <!-- XML Schema Generated from XML Document on Tue Oct 14 2014 09:58:45 GMT-0500 (Central Daylight Time) -->
+          <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+       <xs:element name="Responses">
+              <xs:complexType>
+                     <xs:sequence>
+                            <xs:element name="Response" maxOccurs="unbounded">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="statusCode" type="xs:int"></xs:element>
+                                                 <xs:element name="statusDescription" type="xs:string"></xs:element>
+                                                 <xs:element name="referenceId" type="xs:int"></xs:element>
+                                                 <xs:element name="tokenUniqueId" type="xs:string"></xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                        </xs:sequence>
+                 </xs:complexType>
+          </xs:element>
+   </xs:schema>

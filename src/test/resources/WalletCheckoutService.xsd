@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Checkout" type="Checkout"/>
+
+  <xs:element name="Errors" type="Errors"/>
+
+  <xs:element name="MerchantTransactions" type="MerchantTransactions"/>
+
+  <xs:element name="ShoppingCartRequest" type="ShoppingCartRequest"/>
+
+  <xs:element name="ShoppingCartResponse" type="ShoppingCartResponse"/>
+
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="City" type="xs:string"/>
+      <xs:element name="Country" type="xs:string"/>
+      <xs:element name="CountrySubdivision" type="xs:string" minOccurs="0"/>
+      <xs:element name="Line1" type="xs:string"/>
+      <xs:element name="Line2" type="xs:string" minOccurs="0"/>
+      <xs:element name="Line3" type="xs:string" minOccurs="0"/>
+      <xs:element name="PostalCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AuthenticationOptions">
+    <xs:sequence>
+      <xs:element name="AuthenticateMethod" type="xs:string" minOccurs="0"/>
+      <xs:element name="CardEnrollmentMethod" type="xs:string" minOccurs="0"/>
+      <xs:element name="CAvv" type="xs:string" minOccurs="0"/>
+      <xs:element name="EciFlag" type="xs:string" minOccurs="0"/>
+      <xs:element name="MasterCardAssignedID" type="xs:string" minOccurs="0"/>
+      <xs:element name="PaResStatus" type="xs:string" minOccurs="0"/>
+      <xs:element name="SCEnrollmentStatus" type="xs:string" minOccurs="0"/>
+      <xs:element name="SignatureVerification" type="xs:string" minOccurs="0"/>
+      <xs:element name="Xid" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Card">
+    <xs:sequence>
+      <xs:element name="BrandId" type="xs:string"/>
+      <xs:element name="BrandName" type="xs:string"/>
+      <xs:element name="AccountNumber" type="xs:string"/>
+      <xs:element name="BillingAddress" type="Address"/>
+      <xs:element name="CardHolderName" type="xs:string"/>
+      <xs:element name="ExpiryMonth" type="xs:string" minOccurs="0"/>
+      <xs:element name="ExpiryYear" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Checkout">
+    <xs:sequence>
+      <xs:element name="Card" type="Card"/>
+      <xs:element name="TransactionId" type="xs:string"/>
+      <xs:element name="Contact" type="Contact"/>
+      <xs:element name="ShippingAddress" type="ShippingAddress" minOccurs="0"/>
+      <xs:element name="PayPassWalletIndicator" type="xs:string"/>
+      <xs:element name="AuthenticationOptions" type="AuthenticationOptions" minOccurs="0"/>
+      <xs:element name="RewardProgram" type="RewardProgram" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element name="FirstName" type="xs:string"/>
+      <xs:element name="MiddleName" type="xs:string" minOccurs="0"/>
+      <xs:element name="LastName" type="xs:string"/>
+      <xs:element name="Gender" type="Gender" minOccurs="0"/>
+      <xs:element name="DateOfBirth" type="DateOfBirth" minOccurs="0"/>
+      <xs:element name="NationalID" type="xs:string" minOccurs="0"/>
+      <xs:element name="Country" type="xs:string" minOccurs="0"/>
+      <xs:element name="EmailAddress" type="xs:string"/>
+      <xs:element name="PhoneNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DateOfBirth">
+    <xs:sequence>
+      <xs:element name="Year" type="xs:long"/>
+      <xs:element name="Month" type="xs:long"/>
+      <xs:element name="Day" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ShippingAddress">
+    <xs:complexContent>
+      <xs:extension base="Address">
+        <xs:sequence>
+          <xs:element name="RecipientName" type="xs:string"/>
+          <xs:element name="RecipientPhoneNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RewardProgram">
+    <xs:sequence>
+      <xs:element name="RewardNumber" type="xs:string"/>
+      <xs:element name="RewardId" type="xs:string"/>
+      <xs:element name="RewardName" type="xs:string"/>
+      <xs:element name="ExpiryMonth" type="xs:string" minOccurs="0"/>
+      <xs:element name="ExpiryYear" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" minOccurs="0"/>
+      <xs:element name="ReasonCode" type="xs:string"/>
+      <xs:element name="Recoverable" type="xs:boolean"/>
+      <xs:element name="Source" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Errors">
+    <xs:sequence>
+      <xs:element name="Error" type="Error" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MerchantTransaction">
+    <xs:sequence>
+      <xs:element name="TransactionId" type="xs:string"/>
+      <xs:element name="ConsumerKey" type="xs:string" minOccurs="0"/>
+      <xs:element name="Currency" type="xs:string"/>
+      <xs:element name="OrderAmount" type="xs:long"/>
+      <xs:element name="PurchaseDate" type="xs:dateTime"/>
+      <xs:element name="TransactionStatus" type="TransactionStatus"/>
+      <xs:element name="ApprovalCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MerchantTransactions">
+    <xs:sequence>
+      <xs:element name="MerchantTransactions" type="MerchantTransaction" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ShoppingCart">
+    <xs:sequence>
+      <xs:element name="CurrencyCode" type="xs:string"/>
+      <xs:element name="Subtotal" type="xs:long"/>
+      <xs:element name="ShoppingCartItem" type="ShoppingCartItem" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ShoppingCartItem">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string"/>
+      <xs:element name="Quantity" type="xs:long"/>
+      <xs:element name="Value" type="xs:long"/>
+      <xs:element name="ImageURL" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ShoppingCartRequest">
+    <xs:sequence>
+      <xs:element name="OAuthToken" type="xs:string"/>
+      <xs:element name="ShoppingCart" type="ShoppingCart"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ShoppingCartResponse">
+    <xs:sequence>
+      <xs:element name="OAuthToken" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="Gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="M"/>
+      <xs:enumeration value="F"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TransactionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success"/>
+      <xs:enumeration value="Failure"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

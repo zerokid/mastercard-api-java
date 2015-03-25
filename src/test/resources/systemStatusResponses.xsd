@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+          <!-- XML Schema Generated from XML Document on Mon Oct 13 2014 15:27:42 GMT-0500 (Central Daylight Time) -->
+          <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+       <xs:element name="systemStatusResponses">
+              <xs:complexType>
+                     <xs:sequence>
+                            <xs:element name="SystemResponse">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="ContentId" type="xs:int"></xs:element>
+                                                 <xs:element name="ContentHeader" type="xs:string"></xs:element>
+                                                 <xs:element name="ContentText" type="xs:string"></xs:element>
+                                                 <xs:element name="ContentStatus" type="xs:string"></xs:element>
+                                                 <xs:element name="UserId" type="xs:int"></xs:element>
+                                                 <xs:element name="LastModifiedDate" type="xs:dateTime"></xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                        </xs:sequence>
+                 </xs:complexType>
+          </xs:element>
+   </xs:schema>

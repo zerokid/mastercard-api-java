@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+          <!-- XML Schema Generated from XML Document on Thu Nov 06 2014 10:29:36 GMT-0600 (Central Standard Time) -->
+          <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+       <xs:element name="ns2:TerminationInquiry">
+              <xs:complexType>
+                     <xs:sequence>
+                            <xs:element name="PageOffset" type="xs:int"></xs:element>
+                            <xs:element name="TotalLength" type="xs:int"></xs:element>
+                            <xs:element name="Ref" type="xs:string"></xs:element>
+                            <xs:element name="TerminatedMerchant">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="TerminationReasonCode" type="xs:int"></xs:element>
+                                                 <xs:element name="Merchant">
+                                                        <xs:complexType>
+                                                               <xs:sequence>
+                                                                      <xs:element name="Name" type="xs:string"></xs:element>
+                                                                      <xs:element name="PhoneNumber" type="xs:int"></xs:element>
+                                                                      <xs:element name="Address">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="Line1" type="xs:string"></xs:element>
+                                                                                           <xs:element name="City" type="xs:string"></xs:element>
+                                                                                           <xs:element name="CountrySubdivision" type="xs:string"></xs:element>
+                                                                                           <xs:element name="PostalCode" type="xs:int"></xs:element>
+                                                                                           <xs:element name="Country" type="xs:string"></xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="Principal" maxOccurs="unbounded">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="FirstName" type="xs:string"></xs:element>
+                                                                                           <xs:element name="LastName" type="xs:string"></xs:element>
+                                                                                           <xs:element name="PhoneNumber" type="xs:int"></xs:element>
+                                                                                           <xs:element name="Address">
+                                                                                                  <xs:complexType>
+                                                                                                         <xs:sequence>
+                                                                                                                <xs:element name="Line1" type="xs:string"></xs:element>
+                                                                                                                <xs:element name="Line2" type="xs:string"></xs:element>
+                                                                                                                <xs:element name="City" type="xs:string"></xs:element>
+                                                                                                                <xs:element name="PostalCode" type="xs:int"></xs:element>
+                                                                                                                <xs:element name="Country" type="xs:string"></xs:element>
+                                                                                                            </xs:sequence>
+                                                                                                     </xs:complexType>
+                                                                                              </xs:element>
+                                                                                           <xs:element name="DriversLicense"></xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                  </xs:sequence>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                                 <xs:element name="MerchantMatch">
+                                                        <xs:complexType>
+                                                               <xs:sequence>
+                                                                      <xs:element name="Name" type="xs:string"></xs:element>
+                                                                      <xs:element name="DoingBusinessAsName" type="xs:string"></xs:element>
+                                                                      <xs:element name="PhoneNumber" type="xs:string"></xs:element>
+                                                                      <xs:element name="Address" type="xs:string"></xs:element>
+                                                                      <xs:element name="CountrySubdivisionTaxId" type="xs:string"></xs:element>
+                                                                      <xs:element name="NationalTaxId" type="xs:string"></xs:element>
+                                                                      <xs:element name="PrincipalMatch" maxOccurs="unbounded">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="Name" type="xs:string"></xs:element>
+                                                                                           <xs:element name="NationalId" type="xs:string"></xs:element>
+                                                                                           <xs:element name="PhoneNumber" type="xs:string"></xs:element>
+                                                                                           <xs:element name="Address" type="xs:string"></xs:element>
+                                                                                           <xs:element name="DriversLicense" type="xs:string"></xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                  </xs:sequence>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                        </xs:sequence>
+                     <xs:attribute name="xmlns:ns2" type="xs:string"></xs:attribute>
+                 </xs:complexType>
+          </xs:element>
+   </xs:schema>

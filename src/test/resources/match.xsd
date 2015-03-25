@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mastercard.com/termination" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mastercard.com/termination">
+
+    <!--  <xs:element name="TerminationInquiryRequest" type="tns:termination-inquiry-request_Type"/>	 request -->
+
+    <!--  <xs:element name="TerminationInquiry" type="tns:termination-inquiry_Type"/>	 response -->
+
+    <!-- Simple Types -->
+    <xs:simpleType name="match-enumeration_Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="exact"/>
+            <xs:enumeration value="phonetic"/>
+            <xs:enumeration value="none"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="TerminationInquiryRequest">
+        <!-- Complex Types -->
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AcquirerId" type="xs:string"/>
+                <xs:element name="TransactionReferenceNumber" type="xs:string" minOccurs="0"/>
+                <xs:element name="Merchant" type="tns:merchant_Type" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="TerminationInquiry">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PageOffset" type="xs:integer"/>
+                <xs:element name="TotalLength" type="xs:integer"/>
+                <xs:element name="Ref" type="xs:string"/>
+                <xs:element name="TransactionReferenceNumber" type="xs:string" minOccurs="0"/>
+                <xs:element name="TerminatedMerchant" type="tns:terminated-merchant_Type" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="terminated-merchant_Type">
+        <xs:sequence>
+            <xs:element name="TerminationReasonCode" type="xs:string"/>
+            <xs:element name="Merchant" type="tns:merchant_Type"/>
+            <xs:element name="MerchantMatch" type="tns:merchant-match_Type"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="merchant_Type">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="DoingBusinessAsName" type="xs:string" minOccurs="0"/>
+            <xs:element name="PhoneNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="Address" type="tns:address_Type"/>
+            <xs:element name="CountrySubdivisionTaxId" type="xs:string" minOccurs="0"/>
+            <xs:element name="NationalTaxId" type="xs:string" minOccurs="0"/>
+            <xs:element name="Principal" type="tns:principal_Type" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="principal_Type">
+        <xs:sequence>
+            <xs:element name="FirstName" type="xs:string"/>
+            <xs:element name="LastName" type="xs:string"/>
+            <xs:element name="NationalId" type="xs:string" minOccurs="0"/>
+            <xs:element name="PhoneNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="Address" type="tns:address_Type"/>
+            <xs:element name="DriversLicense" type="tns:drivers-license_Type" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="address_Type">
+        <xs:sequence>
+            <xs:element name="Line1" type="xs:string" minOccurs="0"/>
+            <xs:element name="Line2" type="xs:string" minOccurs="0"/>
+            <xs:element name="City" type="xs:string" minOccurs="0"/>
+            <xs:element name="CountrySubdivision" type="xs:string" minOccurs="0"/>
+            <xs:element name="PostalCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="Country" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="drivers-license_Type">
+        <xs:sequence>
+            <xs:element name="Number" type="xs:string" minOccurs="0"/>
+            <xs:element name="CountrySubdivision" type="xs:string" minOccurs="0"/>
+            <xs:element name="Country" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="merchant-match_Type">
+        <xs:sequence>
+            <xs:element name="Name" type="tns:match-enumeration_Type"/>
+            <xs:element name="DoingBusinessAsName" type="tns:match-enumeration_Type" minOccurs="0"/>
+            <xs:element name="PhoneNumber" type="tns:match-enumeration_Type" minOccurs="0"/>
+            <xs:element name="Address" type="tns:match-enumeration_Type"/>
+            <xs:element name="CountrySubdivisionTaxId" type="tns:match-enumeration_Type" minOccurs="0"/>
+            <xs:element name="NationalTaxId" type="tns:match-enumeration_Type" minOccurs="0"/>
+            <xs:element name="PrincipalMatch" type="tns:principal-match_Type" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="principal-match_Type">
+        <xs:sequence>
+            <xs:element name="Name" type="tns:match-enumeration_Type"/>
+            <xs:element name="NationalId" type="tns:match-enumeration_Type" minOccurs="0"/>
+            <xs:element name="PhoneNumber" type="tns:match-enumeration_Type" minOccurs="0"/>
+            <xs:element name="Address" type="tns:match-enumeration_Type"/>
+            <xs:element name="DriversLicense" type="tns:match-enumeration_Type" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</schema>

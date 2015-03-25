@@ -1,0 +1,59 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="MerchantIds">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="Message"/>
+                <xs:element name="ReturnedMerchants">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Merchant" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Address">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="Line1"/>
+                                                    <xs:element type="xs:string" name="Line2"/>
+                                                    <xs:element type="xs:string" name="City"/>
+                                                    <xs:element type="xs:int" name="PostalCode"/>
+                                                    <xs:element name="CountrySubdivision">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="Name"/>
+                                                                <xs:element type="xs:string" name="Code"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Country">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="Name"/>
+                                                                <xs:element type="xs:string" name="Code"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element type="xs:string" name="PhoneNumber"/>
+                                        <xs:element type="xs:string" name="BrandName"/>
+                                        <xs:element type="xs:string" name="MerchantCategory"/>
+                                        <xs:element type="xs:string" name="MerchantDbaName"/>
+                                        <xs:element type="xs:string" name="DescriptorText"/>
+                                        <xs:element type="xs:string" name="LegalCorporateName"/>
+                                        <xs:element type="xs:int" name="BrickCount"/>
+                                        <xs:element type="xs:string" name="Comment"/>
+                                        <xs:element type="xs:int" name="LocationId"/>
+                                        <xs:element type="xs:int" name="OnlineCount"/>
+                                        <xs:element type="xs:int" name="OtherCount"/>
+                                        <xs:element type="xs:string" name="SoleProprietorName"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

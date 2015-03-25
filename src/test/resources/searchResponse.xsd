@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+          <!-- XML Schema Generated from XML Document on Mon Oct 13 2014 12:44:55 GMT-0500 (Central Daylight Time) -->
+          <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+       <xs:element name="searchResponse">
+              <xs:complexType>
+                     <xs:sequence>
+                            <xs:element name="PANDetails">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="ExpiryDate" type="xs:string"></xs:element>
+                                                 <xs:element name="Pan" type="xs:string"></xs:element>
+                                                 <xs:element name="IssuerPhoneNumber" type="xs:string"></xs:element>
+                                                 <xs:element name="IssuerEmail" type="xs:string"></xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                            <xs:element name="Devices">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="Device" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                               <xs:sequence>
+                                                                      <xs:element name="DeviceId" type="xs:string"></xs:element>
+                                                                      <xs:element name="DeviceNickName" type="xs:string"></xs:element>
+                                                                      <xs:element name="DeviceTypeCode" type="xs:int"></xs:element>
+                                                                      <xs:element name="DeviceTypeDescription" type="xs:string"></xs:element>
+                                                                      <xs:element name="SecureElementId" type="xs:string"></xs:element>
+                                                                      <xs:element name="TokenDisplayId" type="xs:string"></xs:element>
+                                                                      <xs:element name="TokenUniqueId" type="xs:string"></xs:element>
+                                                                      <xs:element name="TokenExpiryDate" type="xs:string"></xs:element>
+                                                                      <xs:element name="ProvisionStatus" type="xs:string"></xs:element>
+                                                                      <xs:element name="ProvisionStatusDescription" type="xs:string"></xs:element>
+                                                                      <xs:element name="AuditInfo">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="UserId" type="xs:string"></xs:element>
+                                                                                           <xs:element name="UserName" type="xs:string"></xs:element>
+                                                                                           <xs:element name="Organization" type="xs:string"></xs:element>
+                                                                                           <xs:element name="LastModifiedDate" type="xs:dateTime"></xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="Comments">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="Comment" maxOccurs="unbounded">
+                                                                                                  <xs:complexType>
+                                                                                                         <xs:sequence>
+                                                                                                                <xs:element name="ReferenceId" type="xs:int"></xs:element>
+                                                                                                                <xs:element name="CommentText" type="xs:string"></xs:element>
+                                                                                                                <xs:element name="AuditInfo">
+                                                                                                                       <xs:complexType>
+                                                                                                                              <xs:sequence>
+                                                                                                                                     <xs:element name="UserId" type="xs:string"></xs:element>
+                                                                                                                                     <xs:element name="UserName" type="xs:string"></xs:element>
+                                                                                                                                     <xs:element name="Organization" type="xs:string"></xs:element>
+                                                                                                                                     <xs:element name="LastModifiedDate" type="xs:dateTime"></xs:element>
+                                                                                                                                 </xs:sequence>
+                                                                                                                          </xs:complexType>
+                                                                                                                   </xs:element>
+                                                                                                                <xs:element name="DevicePanUniqueId" type="xs:string"></xs:element>
+                                                                                                            </xs:sequence>
+                                                                                                     </xs:complexType>
+                                                                                              </xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="CurrentMappingStatus" type="xs:string"></xs:element>
+                                                                      <xs:element name="CurrentMappingStatusDescription" type="xs:string"></xs:element>
+                                                                      <xs:element name="MappingStatusHistorys">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="MappingStatusHistory" maxOccurs="unbounded">
+                                                                                                  <xs:complexType>
+                                                                                                         <xs:sequence>
+                                                                                                                <xs:element name="Status" type="xs:string"></xs:element>
+                                                                                                                <xs:element name="StatusDescription" type="xs:string"></xs:element>
+                                                                                                                <xs:element name="Date" type="xs:dateTime"></xs:element>
+                                                                                                            </xs:sequence>
+                                                                                                     </xs:complexType>
+                                                                                              </xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="StatusHistorys">
+                                                                             <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                           <xs:element name="StatusHistory" maxOccurs="unbounded">
+                                                                                                  <xs:complexType>
+                                                                                                         <xs:sequence>
+                                                                                                                <xs:element name="Status" type="xs:string"></xs:element>
+                                                                                                                <xs:element name="StatusDescription" type="xs:string"></xs:element>
+                                                                                                                <xs:element name="Date" type="xs:dateTime"></xs:element>
+                                                                                                            </xs:sequence>
+                                                                                                     </xs:complexType>
+                                                                                              </xs:element>
+                                                                                       </xs:sequence>
+                                                                                </xs:complexType>
+                                                                         </xs:element>
+                                                                      <xs:element name="ProvisionPath" type="xs:string"></xs:element>
+                                                                  </xs:sequence>
+                                                           </xs:complexType>
+                                                    </xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                            <xs:element name="Response">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                                 <xs:element name="ResponseCode" type="xs:int"></xs:element>
+                                                 <xs:element name="Description" type="xs:string"></xs:element>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                        </xs:sequence>
+                 </xs:complexType>
+          </xs:element>
+   </xs:schema>

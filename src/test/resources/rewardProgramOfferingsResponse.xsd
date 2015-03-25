@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <xs:element name="rewardProgramOfferingsResponse" type="rewardProgramOfferingsResponse"/>
+    <xs:complexType name="RewardProgramOffering">
+        <xs:sequence>
+            <xs:element type="xs:string" name="Id"/>
+            <xs:element type="xs:string" name="Logo"/>
+            <xs:element type="xs:string" name="Name"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RewardProgramOfferings">
+        <xs:sequence>
+            <xs:element type="RewardProgramOffering" name="RewardProgramOffering" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="rewardProgramOfferingsResponse">
+        <xs:sequence>
+            <xs:element type="RewardProgramOfferings" name="RewardProgramOfferings"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

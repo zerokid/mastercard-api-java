@@ -1,0 +1,76 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Atms">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:byte" name="PageOffset"/>
+                <xs:element type="xs:short" name="TotalCount"/>
+                <xs:element name="Atm" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Location">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="Name"/>
+                                        <xs:element type="xs:float" name="Distance"/>
+                                        <xs:element type="xs:string" name="DistanceUnit"/>
+                                        <xs:element name="Address">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="Line1"/>
+                                                    <xs:element type="xs:string" name="Line2"/>
+                                                    <xs:element type="xs:string" name="City"/>
+                                                    <xs:element type="xs:float" name="PostalCode"/>
+                                                    <xs:element name="CountrySubdivision">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="Name"/>
+                                                                <xs:element type="xs:string" name="Code"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Country">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="Name"/>
+                                                                <xs:element type="xs:string" name="Code"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Point">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:float" name="Latitude"/>
+                                                    <xs:element type="xs:float" name="Longitude"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="LocationType">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="Type"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element type="xs:string" name="HandicapAccessible"/>
+                            <xs:element type="xs:string" name="Camera"/>
+                            <xs:element type="xs:string" name="Availability"/>
+                            <xs:element type="xs:string" name="AccessFees"/>
+                            <xs:element type="xs:string" name="Owner"/>
+                            <xs:element type="xs:string" name="SharedDeposit"/>
+                            <xs:element type="xs:string" name="SurchargeFreeAlliance"/>
+                            <xs:element type="xs:string" name="SurchargeFreeAllianceNetwork"/>
+                            <xs:element type="xs:string" name="Sponsor"/>
+                            <xs:element type="xs:string" name="SupportEMV"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

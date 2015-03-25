@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="CardBrandsResponse" type="CardBrandsResponse"/>
+
+  <xs:complexType name="CardBrand">
+    <xs:sequence>
+      <xs:element name="CvvRequired" type="xs:boolean"/>
+      <xs:element name="DisplayName" type="xs:string"/>
+      <xs:element name="ExpDateRequired" type="xs:boolean"/>
+      <xs:element name="Id" type="xs:string"/>
+      <xs:element name="logoUrl" type="xs:string" minOccurs="0"/>
+      <xs:element name="PrivateLabelCard" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CardBrands">
+    <xs:sequence>
+      <xs:element name="CardBrand" type="CardBrand" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CardBrandsResponse">
+    <xs:sequence>
+      <xs:element name="CardBrands" type="CardBrands"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

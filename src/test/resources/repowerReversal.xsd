@@ -1,0 +1,36 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RepowerReversal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:int" name="RequestId"/>
+        <xs:element type="xs:integer" name="OriginalRequestId"/>
+        <xs:element type="xs:string" name="TransactionReference"/>
+        <xs:element name="TransactionHistory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Transaction">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Type"/>
+                    <xs:element type="xs:int" name="SystemTraceAuditNumber"/>
+                    <xs:element type="xs:int" name="NetworkReferenceNumber"/>
+                    <xs:element type="xs:string" name="SettlementDate"/>
+                    <xs:element name="Response">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="Code"/>
+                          <xs:element type="xs:string" name="Description"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:dateTime" name="SubmitDateTime"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
